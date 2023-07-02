@@ -1,11 +1,12 @@
 module HardwareAbstractions
 
-using ControlSystemsBase, Parameters, DSP, LinearAlgebra
+using ControlSystemsBase, LinearAlgebra
 
-export @periodically, chirp
-export control, measure, num_inputs, num_outputs, inputrange, outputrange, isstable, isasstable, sampletime, bias, initialize, finalize
+export @periodically, chirp, show_measurements
+export control, measure, inputrange, outputrange, isstable, isasstable, sampletime, bias, initialize, finalize, ninputs, noutputs, nstates
 
 import Base: finalize
+import ControlSystemsBase: sampletime, isstable, ninputs, noutputs, nstates
 
 
 include("utilities.jl")
