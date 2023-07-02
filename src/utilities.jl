@@ -1,4 +1,4 @@
-export @periodically, init_sysfilter, sysfilter!, SysFilter
+export @periodically, @periodically_yielding, init_sysfilter, sysfilter!, SysFilter
 
 """
 	@periodically(h, body)
@@ -10,6 +10,15 @@ macro periodically(h, body)
 		$(esc(body))
 		local execution_time = time()-start_time
 		Libc.systemsleep(max(0,$(esc(h))-execution_time))
+	end
+end
+
+macro periodically_yielding(h, body)
+	quote
+		local start_time = time()
+		$(esc(body))
+		local execution_time = time()-start_time
+		sleep(max(0,$(esc(h))-execution_time))
 	end
 end
 
