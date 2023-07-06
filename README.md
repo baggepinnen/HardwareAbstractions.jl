@@ -9,6 +9,6 @@ The interface is defined by [`interface.jl`](https://github.com/baggepinnen/Hard
 
 ## Utilities
 The package also contains some utilities for working with hardware devices and control loops, such as 
-`@periodically`: Ensures that the body is run with an interval of `h >= 0.001` seconds.
-`SysFilter`: Returns an object used for filtering signals through LTI systems.
-`rk4`: A Runge-Kutta 4 integrator.
+- `@periodically`: Ensures that the body is run with an interval of `h >= 0.001` seconds.
+- `SysFilter`: Returns an object used for filtering signals through LTI systems.
+- `rk4`: A Runge-Kutta 4 integrator.
