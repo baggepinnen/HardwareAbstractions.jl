@@ -21,7 +21,9 @@ end
 """
     chirp(t, f0, f1, Tf; logspace = true)
 
-If `t` is a symbolic variable, a symbolic expression in `t` is returned.
+Generate a logarithmic (default) or linear chirp signal betweem frequencies `f0` and `f1` over a time `Tf`.
+
+A logarithmic chirp has roughly the same number of periods for each frequency, while a linear chirp spends roughly the same amount of time for each frequency. Most of the time, you want a logarithmic chirp, in order to get the same amount of information for each frequency.
 """
 function chirp(t, f0, f1, Tf; logspace=true)
     f = logspace ? f0*(f1/f0)^(t/Tf) : f0 + t/Tf*(f1-f0)
