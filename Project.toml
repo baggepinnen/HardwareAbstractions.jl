@@ -1,7 +1,7 @@
 name = "HardwareAbstractions"
 uuid = "9ac91abb-62f4-42c0-88e8-83732e93d543"
 authors = ["Fredrik Bagge Carlson"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 ControlSystemsBase = "aaaaaaaa-a6ca-5380-bf3e-84a91bcd477e"
